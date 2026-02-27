@@ -4,6 +4,9 @@
 
 R-universe 会自动从 GitHub 拉取源码、构建 R 包并提供 CRAN 风格的安装方式。
 
+## 更新日期  
+20260227 v0.1.0
+
 ## 配置步骤
 
 ### 1. 创建 universe 仓库
@@ -108,3 +111,4 @@ crosscell-r/
 ├── .Rbuildignore        # R CMD build 排除规则
 └── LICENSE
 ```
+
