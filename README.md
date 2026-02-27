@@ -8,15 +8,16 @@ R-universe 会自动从 GitHub 拉取源码、构建 R 包并提供 CRAN 风格�
 
 ### 1. 创建 universe 仓库
 
-在 GitHub 上创建仓库：`biodancerwangzhi/universe`
+在 GitHub 上创建仓库：`biodancerwangzhi/biodancerwangzhi.r-universe.dev`
 
 要求：
-- 仓库名必须是 `universe`（固定名称）
+- 仓库名必须是 `<username>.r-universe.dev`（固定格式）
 - 必须是 public 仓库
+- 你当前的 `biodancerwangzhi/universe` 仓库名不对，需要改名为 `biodancerwangzhi.r-universe.dev`
 
 ### 2. 添加 packages.json
 
-将本目录下的 `packages.json` 放到 `universe` 仓库根目录：
+将本目录下的 `packages.json` 放到仓库根目录（注意是复数 packages）：
 
 ```json
 [
@@ -33,13 +34,19 @@ R-universe 会自动从 GitHub 拉取源码、构建 R 包并提供 CRAN 风格�
 - `url`: 源码仓库地址
 - `subdir`: R 包在仓库中的子目录
 
-### 3. 注册 R-universe
+### 3. 安装 R-universe GitHub App（必须）
 
-访问 https://r-universe.dev/add 用 GitHub 账号登录，它会自动检测 `universe` 仓库。
+访问 https://github.com/apps/r-universe 点击 "Install"，选择安装到 `biodancerwangzhi` 账号。
 
-### 4. 等待构建
+可以选 "All repositories" 或只勾选：
+- `biodancerwangzhi.r-universe.dev`
+- `crosscell`
 
-注册后 R-universe 会：
+**不安装这个 App，R-universe 不会开始构建。**
+
+### 4. 等待自动构建
+
+安装 App 后，R-universe 会自动：
 1. 克隆 `biodancerwangzhi/crosscell` 完整仓库
 2. 进入 `crosscell-r/` 子目录
 3. 执行 `R CMD build` + `R CMD INSTALL`
